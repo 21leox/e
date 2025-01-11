@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efsun'uma Özel Sürpriz ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hearts-container"></div>
+    
+    <div class="content-container">
+        <div class="navigation">
+            <button class="nav-btn prev" onclick="prevSlide()">❮</button>
+            <button class="nav-btn next" onclick="nextSlide()">❯</button>
+        </div>
+
+        <div class="slides">
+            <!-- Giriş Sayfası -->
+            <div class="slide active" id="slide1">
+                <h1>Efsun'uma Özel Sürpriz Sayfası</h1>
+                <div class="first-meet">
+                    <img src="biz.jpg" alt="İlk Tanışma" class="memory-img">
+                    <p class="memory-text">Hayatımın en güzel anı seninle tanıştığım o gün...</p>
+                </div>
+            </div>
+
+            <!-- Fotoğraf Kolajı -->
+            <div class="slide" id="slide2">
+                <h2>Yaparken En Keyif Aldığım Şeyler</h2>
+                <div class="photo-collage">
+                    <div class="collage-item">
+                        <p class="collage-text">Seni sinirlendirmek (Gözümde böyle görünuyorsun)</p>
+                        <img src="sinirli.jpg" alt="Sinirli Anı" class="collage-img">
+                    </div>
+                    <div class="collage-item">
+                        <p class="collage-text">Seni güldürmek</p>
+                        <img src="güldürmek.jpg" alt="Güldürme Anı" class="collage-img">
+                    </div>
+                    <div class="collage-item">
+                        <p class="collage-text">Sana Bakmak, Seni Mutlu Görmek</p>
+                        <img src="keddiyy.jpg" alt="Keddy Anı" class="collage-img">
+                    </div>
+                    <div class="collage-item">
+                        <p class="collage-text">Sana iltifat etmek</p>
+                        <img src="wwww.jpg" alt="İltifat Anı" class="collage-img">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Müzik Çalar -->
+            <div class="slide" id="slide3">
+                <h2>Bizi Şarkılar Anlatacak Olsaydı Bunlar Olurdu</h2>
+                <div class="music-player">
+                    <div class="playlist">
+                        <a href="https://www.youtube.com/watch?v=XvPwIS_n-l4" target="_blank" class="song">
+                            <span class="song-title">Die With A Smile</span>
+                            <span class="song-artist">Lady Gaga</span>
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=LNweljXAt7o" target="_blank" class="song">
+                            <span class="song-title">Mind Over Matter</span>
+                            <span class="song-artist">Young The Giant</span>
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=dBcLP6QT7uM" target="_blank" class="song">
+                            <span class="song-title">Star Shopping</span>
+                            <span class="song-artist">Lil Peep</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Anılar -->
+            <div class="slide" id="slide4">
+                <h2>Bunca Zamandır Yanımda Olduğun İçin Teşekkür Ederim Balım</h2>
+                <div class="memories">
+                    <div class="memory-card">
+                        <p>
+Zaman, ağır aksak ilerlerken,
+Yalnızlığımın gölgesinde boğulmuşken,
+Bir gün geldin yanıma, sessizce,
+Elinde bir pasta, yüreğinde bin şefkatle.
+
+Bir dilim tatlıyla başladı her şey,
+Ama tattığım, sadece bir lezzet değildi.
+Gözlerindeki o ışık, o sıcaklık,
+Karanlık gecelerime doğan bir güneşti.
+
+Her zor anımda bir dağ gibi durdun,
+Düşerken ellerimden tuttun.
+Sözlerinle, varlığınla sardın beni,
+Ruhuma huzur, kalbime umut ektin.
+
+Bir pastayla başlayan bu masal,
+Aşkın tarifi oldu, bambaşka bir tadı var.
+Şimdi ne zaman o anı hatırlasam,
+İçimde bir ateş, yanaklarımda bir bahar.
+
+Senin sevgin, her kışımı bahara çevirdi,
+Her düşüşümde yeniden doğmamı sağladı.
+Şimdi her gün, bir pasta tadında,
+Çünkü sen varsın, çünkü aşığım Sana.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gelecek Planları -->
+            <div class="slide" id="slide5">
+                <h2>Hayallerim</h2>
+                <div class="dreams">
+                    <div class="dream-bubble">Sen. </div>
+                    <div class="dream-bubble">Seninle Büyümek.</div>
+                    <div class="dream-bubble">Seninle Ölmek.</div>
+                </div>
+            </div>
+
+            <!-- Mektup -->
+            <div class="slide" id="slide6">
+                <h2>Sana Mektubum</h2>
+                <div class="letter">
+                    <p>Sevgili Efsun'um,Seni çok seviyorum tüm duygularımla bunu söyluyorum.</p>
+                    <p>Bana yaşamayı sevdirdiğin için teşekkür ederim.</p>
+                    <p>Nerden başlıyacağımı bile bilmiyorum. Ama bunu yapmak için çok çalışıyorum. Seni çok seviyorum.
+                        İyi ki varsın, İyi ki benim hayatımdasın. Seni tanıdığım için çok şanşlıyım. Beni tamamiyle değiştirdin.
+                        Ve bunu hiç bir çıkar göz etmeden yaptın. Tüm iyi ve güzel kelimeler yanında sönük kalır. Sen hepsinden
+                        Hem daha iyi hemde daha güzelsin. Başıma gelmiş en güzel şey sensin. Butun hayatımı seninle birlikte geçirmek istiyorum.
+                        Seninle birlikte bir sürü şey yapmak istiyorum. Daha fazla anı biriktirmek istiyorum. Herşeyi seninle yapmak istiyorum.
+                        İyi ve Kötü Tüm Anılarımızı Seviyorum.Bana gününü anlatmanı seviyorum. Aldığın şeyleri bahsetmeni seviyorum.
+                        Küpelerini anlatmanı seviyorum. Ne giyeceğini söylemeni seviyorum. Bana bakmanı seviyorum. Bana kızmanı seviyorum. Bana trip atmanı seviyorum
+                        Herşeyini seviyorum. İçinde sen olan herşeyi seviyorum. Ben şuanda kapıyı kitledim ağlıyorum
+                        Diğerleride mutfakta sohbet ediyorlar. Tüm duygularımla teşekkür ederim. Benim güzel kızım, bebeğim,balım.
+                                                                                                                                Sevgilerimle seni çok seven eşşeğin.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Final -->
+            <div class="slide" id="slide7">
+                <div class="content">
+                    <h2>İyii ki varsınn Esseeegimm</h2>
+                    <div class="message-box">
+                        <p class="special-text">
+                           "365 Gün Geceyim Bir Gün Öp Dudaklarımdan De ki "Günaydın""
+                        </p>
+                    </div>
+                    <div class="single-photo">
+                        <img src="gif.gif" alt="Özel Anı" class="large-image">
+                        <div class="kiss-counter-container">
+                            <div class="kiss-counter">
+                                <span id="kissCount">0</span>
+                                <span class="kiss-icon">💋</span>
+                            </div>
+                            <p class="kiss-message">Yıldızlar Kadar Öpücük Balım</p>
+                        </div>
+                    </div>
+                </div>
+                 <div></div>  
+                    </div>
+                </div>
+            </div>
+
+            <!-- Yeni Slide -->
+            <div class="slide" id="slide8">
+                <div class="content">
+                    <div class="message-top">
+                        <p class="romantic-text">
+                        Senii çokkkkkkkkkkkkkkkkk seviyorummmmm
+                        </p>
+                    </div>
+                    
+                    <div class="center-photo">
+                        <img src="beeen.jpg" alt="Özel Anımız" class="centered-image">
+                    </div>
+                    
+                    <div class="message-bottom">
+                        <p class="romantic-text">
+                            Teşekkür ederim. Küccükkk Nurullahh
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+         <!-- İyi ki varsın eşşeğim sayfasında -->
+            
+    <audio id="background-music" loop autoplay>
+        <source src="Bôa - Duvet (Lyrics).mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

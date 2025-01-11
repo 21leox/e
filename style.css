@@ -1,0 +1,629 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #ffe5e5, #fff0f5, #e6e6fa);
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    animation: backgroundShift 15s ease infinite;
+}
+
+.content-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heart {
+    position: fixed;
+    font-size: 24px;
+    filter: drop-shadow(0 0 15px rgba(255, 105, 180, 0.5));
+    animation: float-continuous 4s linear infinite, pulse 1s ease infinite;
+    opacity: 0;
+    z-index: 1;
+}
+
+.slides {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+h1, h2 {
+    font-family: 'Dancing Script', cursive;
+    color: #ff1493;
+    text-shadow: 0 0 10px rgba(255, 20, 147, 0.3);
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2.4em;
+}
+
+.memory-img, .collage-img, .final-img {
+    max-width: 80%;
+    max-height: 60vh;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.memory-img:hover, .collage-img:hover {
+    transform: scale(1.05);
+}
+
+.photo-collage {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.collage-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.collage-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.collage-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2em;
+    color: #ff1493;
+    text-shadow: 0 0 5px rgba(255, 20, 147, 0.3);
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.memory-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    padding: 25px;
+    border-radius: 15px;
+    margin: 15px;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.2);
+    transition: transform 0.3s ease;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.memory-card p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2em;
+    color: #ff1493;
+    text-shadow: 0 0 5px rgba(255, 20, 147, 0.3);
+    line-height: 1.6;
+    white-space: pre-line;
+    text-align: center;
+    margin: 0;
+}
+
+.memory-card:hover, .dream-bubble:hover {
+    transform: scale(1.05);
+}
+
+.letter {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 600px;
+    margin: 20px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5em;
+    line-height: 1.6;
+    color: #ff1493;
+}
+
+.nav-btn {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    padding: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 3;
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+.playlist {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.song {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    padding: 15px 25px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.song:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+}
+
+.song-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5em;
+    color: #ff1493;
+    text-shadow: 0 0 5px rgba(255, 20, 147, 0.3);
+}
+
+.song-artist {
+    font-size: 0.9em;
+    color: #ff69b4;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .photo-collage {
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .collage-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .collage-text {
+        font-size: 1em;
+        min-height: 35px;
+    }
+
+    .nav-btn {
+        padding: 15px;
+        font-size: 20px;
+    }
+
+    .song-title {
+        font-size: 1.2em;
+    }
+    
+    .song-artist {
+        font-size: 0.8em;
+    }
+
+    .memory-card {
+        padding: 20px;
+        margin: 10px;
+        max-width: 90%;
+    }
+
+    .memory-card p {
+        font-size: 1em;
+        line-height: 1.5;
+    }
+}
+
+.love-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    letter-spacing: 0.1px;
+    color: #34495e;
+    text-align: justify;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.message-box {
+    text-align: center;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.special-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #34495e;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.image-container {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.slide-image {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.photo-gallery {
+    width: 90%;
+    margin: 1rem auto;
+    padding: 10px;
+}
+
+.photo-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.photo-item {
+    flex: 1;
+    max-width: 45%;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .photo-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .photo-item {
+        max-width: 80%;
+    }
+    
+    .gallery-image {
+        height: 180px;
+    }
+}
+
+.single-photo {
+    width: 90%;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.large-image {
+    width: 90%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.large-image:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+    .large-image {
+        height: 300px;
+        width: 95%;
+    }
+}
+
+.message-top, .message-bottom {
+    text-align: center;
+    padding: 0.5rem;
+    margin: 0.5rem auto;
+    width: 95%;
+}
+
+.romantic-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    letter-spacing: 0.1px;
+    color: #34495e;
+    text-align: center;
+    margin: 1rem;
+    padding: 1.2rem;
+    background-color: rgba(255, 255, 255, 0.92);
+    border-radius: 8px;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.romantic-text:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.message-top {
+    margin-top: 2rem;
+}
+
+.message-bottom {
+    margin-bottom: 2rem;
+}
+
+.center-photo {
+    margin: 2.5rem auto;
+}
+
+/* Mobil için düzenlemeler */
+@media (max-width: 768px) {
+    .romantic-text {
+        max-width: 90%;
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+.centered-image {
+    width: 90%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.centered-image:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+    .romantic-text {
+        font-size: 0.9rem;
+    }
+    
+    #slide8 h2 {
+        font-size: 1.5rem;
+    }
+    
+    .centered-image {
+        width: 95%;
+        height: 350px;
+    }
+}
+
+#slide8 h2 {
+    font-family: 'Playfair Display', serif;
+    color: #34495e;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+}
+
+/* Tüm metin elementleri için pembe tonlarında stiller */
+.love-letter, .romantic-text, .special-text, .slide p, .message-box p {
+    font-family: 'Playfair Display', serif;
+    color: #d6336c;  /* pembe metin rengi */
+    font-size: 1rem;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+    background: rgba(255, 240, 245, 0.95); /* çok açık pembe arka plan */
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(219, 112, 147, 0.1);
+    padding: 1.5rem;
+    margin: 1.2rem auto;
+    max-width: 85%;
+    border: 1px solid rgba(255, 182, 193, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* Hover efektleri */
+.love-letter:hover, .romantic-text:hover, .special-text:hover, .message-box p:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(219, 112, 147, 0.15);
+    background: rgba(255, 240, 245, 0.98);
+}
+
+/* Başlıklar için pembe tonlarında stiller */
+.slide h2, #slide1 h2, #slide2 h2, #slide3 h2, #slide4 h2, #slide5 h2, #slide6 h2, #slide7 h2, #slide8 h2 {
+    font-family: 'Playfair Display', serif;
+    color: #e64980;  /* daha koyu pembe başlık rengi */
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 2rem 0;
+    text-shadow: 2px 2px 4px rgba(219, 112, 147, 0.1);
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+/* Başlık altı çizgisi */
+.slide h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #e64980, transparent);
+}
+
+/* Fotoğraflar için pembe tonlarında çerçeve */
+.centered-image, .slide-image, .gallery-image {
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(219, 112, 147, 0.2);
+    transition: all 0.4s ease;
+    border: 3px solid rgba(255, 240, 245, 0.9);
+}
+
+.centered-image:hover, .slide-image:hover, .gallery-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 30px rgba(219, 112, 147, 0.25);
+}
+
+/* Mobil için düzenlemeler */
+@media (max-width: 768px) {
+    .slide h2, #slide1 h2, #slide2 h2, #slide3 h2, #slide4 h2, #slide5 h2, #slide6 h2, #slide7 h2, #slide8 h2 {
+        font-size: 1.6rem;
+    }
+    
+    .love-letter, .romantic-text, .special-text, .message-box p {
+        font-size: 0.95rem;
+        max-width: 92%;
+        padding: 1.2rem;
+    }
+}
+
+.kiss-counter-container {
+    text-align: center;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.kiss-counter {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #e64980;
+    margin: 1rem auto;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(255, 240, 245, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(219, 112, 147, 0.15);
+    max-width: 300px;
+}
+
+.kiss-icon {
+    font-size: 2rem;
+    animation: pulse 1.5s infinite;
+}
+
+.kiss-message {
+    font-family: 'Playfair Display', serif;
+    color: #d6336c;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    text-shadow: 1px 1px 2px rgba(219, 112, 147, 0.1);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Son sayfadaki sayaç için özel stil */
+#slide8 .kiss-counter-container {
+    margin: 1rem auto;  /* üst ve alt boşluğu azalttım */
+}
+
+#slide8 .kiss-counter {
+    font-size: 2rem;    /* font boyutunu biraz küçülttüm */
+    padding: 0.8rem;    /* padding'i azalttım */
+    max-width: 250px;   /* genişliği azalttım */
+}
+
+#slide8 .kiss-message {
+    font-size: 1.1rem;  /* mesaj boyutunu küçülttüm */
+    margin-top: 0.5rem; /* üst boşluğu azalttım */
+}
