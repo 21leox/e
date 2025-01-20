@@ -627,3 +627,67 @@ h2 {
     font-size: 1.1rem;  /* mesaj boyutunu küçülttüm */
     margin-top: 0.5rem; /* üst boşluğu azalttım */
 }
+
+/* Yapboz sayfası için güncellenmiş stiller */
+#slide9 .container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 15px;  /* padding'i azalttım */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 700px;  /* maksimum genişliği azalttım */
+    width: 90%;
+    margin: auto;
+}
+
+#slide9 h1 {
+    color: #d6336c;
+    font-size: 2rem;  /* font boyutunu küçülttüm */
+    margin-bottom: 20px;  /* alt boşluğu azalttım */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#slide9 .image-container {
+    margin: 15px 0;  /* kenar boşluklarını azalttım */
+}
+
+#slide9 .puzzle-image {
+    max-width: 80%;  /* fotoğraf genişliğini %100'den %80'e düşürdüm */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+#slide9 .image-title {
+    color: #d6336c;
+    font-size: 1.3rem;  /* font boyutunu küçülttüm */
+    margin-top: 10px;  /* üst boşluğu azalttım */
+    font-weight: bold;
+}
+
+#slide9 .date {
+    color: #d6336c;
+    font-size: 1.1rem;  /* font boyutunu küçülttüm */
+    margin-top: 10px;  /* üst boşluğu azalttım */
+    font-weight: bold;
+}
+
+/* Mobil için düzenlemeler */
+@media (max-width: 768px) {
+    #slide9 h1 {
+        font-size: 1.8rem;
+    }
+    
+    #slide9 .puzzle-image {
+        max-width: 90%;
+    }
+    
+    #slide9 .image-title {
+        font-size: 1.2rem;
+    }
+    
+    #slide9 .date {
+        font-size: 1rem;
+    }
+}
