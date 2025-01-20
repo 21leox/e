@@ -1,5 +1,5 @@
 let currentSlide = 1;
-const totalSlides = 8;
+const totalSlides = 9;
 
 const slides = [
     document.getElementById('slide1'),
@@ -9,7 +9,8 @@ const slides = [
     document.getElementById('slide5'),
     document.getElementById('slide6'),
     document.getElementById('slide7'),
-    document.getElementById('slide8')
+    document.getElementById('slide8'),
+    document.getElementById('slide9')
 ];
 
 function showSlide(n) {
